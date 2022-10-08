@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    
+<div class="container mt-3">
+    <h1>Hello {{string}} </h1>
+    <h3>These are your Documents</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Sr No.</th>
+        <th>File Name</th>
+        <th>Time Created</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for keys, values in d1 %}
+      <tr>
+            <td>{{loop.index}}</td>
+            <td><p><a href="/static/{{string}}/{{keys}}" download>{{keys}}</a></p></td>
+            
+            <td>{{values}}</td>
+        
+        
+        
+            <td><a href="/static/{{string}}/{{keys}}/Delete" onclick="window.close()" target="_blank" ><button style="margin:2.5px;width:100px" type="button" class="btn btn-dark">Delete</button></a><a href="/static/{{string}}/{{keys}}" download><button style="margin: 2.5px;width:100px" type="button" class="btn btn-primary">Download</button></td></a>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script></script>
+</body>
+</html>
