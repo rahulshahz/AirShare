@@ -24,7 +24,7 @@ def hello():
     final_directory = os.path.join(current_directory, str)
     if not os.path.exists(final_directory):
         os.makedirs(final_directory)
-    return render_template("index.html",str=str)
+    return render_template("next.html",str=str)
 
 @app.route('/<string:str>',methods=['GET','POST'])
 
@@ -74,4 +74,4 @@ def world(path,str):
     return redirect(url_for("show",str=str))
     
 if __name__=="__main__":
-    app.run(debug=True,port=8090)
+    app.run(port=8090)
