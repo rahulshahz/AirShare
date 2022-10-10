@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+/*custom scrollbar*/
+::-webkit-scrollbar {
+  width: 6px;
+  background: #acb7e1;
+}
+::-webkit-scrollbar-thumb {
+  background: #4577af;
+  border-radius: 10px;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.shape {
+  opacity: 60%;
+  position: absolute;
+  z-index: -1;
+  height: 10rem;
+  width: 10rem;
+}
+
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.img img {
+  max-width: 600px;
+  /* animation: animate 5s linear infinite; */
+}
+
+@media only screen and (max-width: 1100px) {
+  .img img {
+    display: none;
+  }
+}
+
+/* @keyframes animate {
+    0%,100%{
+        transform: translateY(50px);
+    }
+    50%{
+        transform: translateY(100px);
+    }
+} */
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+@media (max-width: 900px) {
+  section {
+    padding: 50px 10px 10px;
+  }
+}
+
+.container {
+  position: relative;
+  width: calc(100% - 100px);
+  min-height: calc(100vh - 280px);
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  padding: 50px;
+  margin-top: 60px;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    position: relative;
+    width: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    margin-top: 120px;
+    height: auto;
+    padding: 10px;
+    width: calc(100% - 75px);
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    flex-direction: column;
+    margin-top: 80px;
+    height: auto;
+    padding: 10px;
+    width: calc(100% - 0px);
+    align-items: center;
+  }
+}
