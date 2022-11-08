@@ -12,7 +12,7 @@ def hello():
                      'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
                      'z']
     str=''
-    for i in range(16):
+    for i in range(1):
 
         str=str+random.choice(lst)
     print(str)
